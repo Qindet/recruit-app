@@ -1,7 +1,7 @@
-import {addStuff} from './stuff-operations'
+import {addStuffLoaded} from './stuff-operations'
 
 
 
 export {
-    addStuff
+    addStuffLoaded
 }
