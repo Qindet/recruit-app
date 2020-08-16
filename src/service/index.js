@@ -19,7 +19,7 @@ export default class recruitService {
     }
     getItems = async (type) => {
         try {
-            const res = await axios.get(`${this._URL}/${type}.json?orderBy="$name"&limitToFirst=2`)
+            const res = await axios.get(`${this._URL}/${type}.json?`)
             if (res.status !== 200) {
                 throw new Error('Error')
             }

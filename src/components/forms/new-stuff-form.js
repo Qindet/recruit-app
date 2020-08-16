@@ -38,6 +38,7 @@ const NewStuffForm = (props) => {
             address: '',
             position: '',
             email: '',
+            fileControl: ''
         },
         validate,
         onSubmit: values => {
@@ -46,7 +47,7 @@ const NewStuffForm = (props) => {
     });
     return (
            <form onSubmit={formik.handleSubmit}>
-               <div className="form-group">
+               <div className='form-group'>
                    <label htmlFor="firstName">First name</label>
                    <input onChange={formik.handleChange} type="text" className="form-control" id="FirstName"
                           value={formik.values.firstName}

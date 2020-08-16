@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b7b1e3-d282-40cd-8275-df7b0a396f5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/forms/form-styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/spinner/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stuff-list-item/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/selectors/stuff-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/forms/new-position-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/new-position-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/stuff-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/stuff-operations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/new-stuff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/new-stuff/new-stuff.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/main-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/new-stuff/new-stuff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/stuff-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/stuff-operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/form-styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/form-styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/spinner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/spinner/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +98,8 @@
       <updated>1597381205026</updated>
       <workItem from="1597381261597" duration="4266000" />
       <workItem from="1597398440042" duration="9497000" />
-      <workItem from="1597468227443" duration="14705000" />
+      <workItem from="1597468227443" duration="15347000" />
+      <workItem from="1597554869551" duration="4623000" />
     </task>
     <servers />
   </component>
