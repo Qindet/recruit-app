@@ -42,7 +42,7 @@ const NewStuffForm = (props) => {
         },
         validate,
         onSubmit: values => {
-            props.addStuffLoaded(values)
+            props.addStuffLoaded({...values,date:new Date().toDateString()})
         },
     });
     return (

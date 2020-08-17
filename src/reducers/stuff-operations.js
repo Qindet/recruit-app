@@ -1,7 +1,9 @@
 const initialState = {
     stuffList: [],
     loadingList: true,
-    errorList: false
+    errorList: false,
+    pageSize: 5,
+    numberPage: 0
 }
 
 export default function stuffOperations(state=initialState, action) {
@@ -28,6 +30,23 @@ export default function stuffOperations(state=initialState, action) {
                 ...state,
                 loadingList: false,
                 errorList: true
+            }
+        case 'STUFF_PAGE_CHANGED':
+            return {
+                ...state,
+                numberPage: action.payload
+            }
+        case 'PREVIOUS_STUFF_PAGE':
+            const page = state.numberPage !== 0 ? state.numberPage - 1 : state.numberPage
+            return {
+                ...state,
+                numberPage: page
+            }
+        case 'NEXT_STUFF_PAGE':
+            const nextPage = state.numberPage+1 !== Math.ceil(state.stuffList.length/state.pageSize) ? state.numberPage + 1 : state.numberPage
+            return {
+                ...state,
+                numberPage: nextPage
             }
         default:
             return state

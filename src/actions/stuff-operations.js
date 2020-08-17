@@ -35,6 +35,25 @@ const stuffListFailed = (payload) => {
     }
 }
 
+const changeStuffPage = (payload) => {
+    return {
+        type: 'STUFF_PAGE_CHANGED',
+        payload
+    }
+}
+
+const previousStuffPage = (payload) => {
+    return {
+        type: 'PREVIOUS_STUFF_PAGE'
+    }
+}
+
+const nextStuffPage = () => {
+    return {
+        type: 'NEXT_STUFF_PAGE'
+    }
+}
+
 const fetchStuffList = () => async (dispatch) => {
     try {
         dispatch(stuffListRequested())
@@ -49,5 +68,8 @@ const fetchStuffList = () => async (dispatch) => {
 
 export {
     addStuffLoaded,
-    fetchStuffList
+    fetchStuffList,
+    changeStuffPage,
+    previousStuffPage,
+    nextStuffPage
 }

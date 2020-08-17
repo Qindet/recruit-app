@@ -7,7 +7,6 @@ export default class recruitService {
 
     postItem = async (data,type) => {
         try {
-            console.log(this._URL)
             const res = await axios.post(`${this._URL}/${type}.json`,data)
             if (res.status !== 200) {
                 throw new Error('Error')

@@ -1,7 +1,11 @@
-import {addStuffLoaded} from './stuff-operations'
+import {addStuffLoaded,changeStuffPage,
+previousStuffPage,nextStuffPage} from './stuff-operations'
 
 
 
 export {
-    addStuffLoaded
+    addStuffLoaded,
+    changeStuffPage,
+    previousStuffPage,
+    nextStuffPage
 }

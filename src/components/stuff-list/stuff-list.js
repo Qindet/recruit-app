@@ -1,37 +1,25 @@
-import React, {useEffect} from "react";
+import React from "react";
 import './stuff-list.css'
-import {connect} from 'react-redux'
 
-import {getLoadingStatusStuffList, getStuffList} from "../../selectors/stuff-list";
-import Spinner from "../spinner";
-import {fetchStuffList} from "../../actions/stuff-operations";
-import StuffListItem from "../stuff-list-item/stuff-list-item";
 
-const StuffList = (props) => {
+const StuffList = (props) => (
+    <div className="d-flex flex-column align-items-center ">
+        {props.items}
+        <nav aria-label="Page navigation example">
+            <ul className="pagination justify-content-center">
+                {props.paginationList}
+                <button disabled={props.numberPage===0}  className="btn btn-secondary" onClick={props.getPreviousPage}>
+                 Previous
+                </button>
+                <button disabled={props.numberPage+1 === props.paginationList.length} className="btn btn-secondary" onClick={props.getNextPage}>
+                   Next
+                </button>
+            </ul>
+        </nav>
+    </div>
+)
 
-    useEffect(() => {
-        props.fetchStuffList()
-    },[props.fetchStuffList])
 
-    if (props.loadingStatus) {
-        return <Spinner />
-    }
-    return (
-        <div className="d-flex flex-column align-items-center ">
-            {props.stuffList.map(item=><StuffListItem key={item.id} item={item}/>)}
-        </div>
-    )
-}
 
-const mapStateToProps = (state) => {
-    return {
-        loadingStatus: getLoadingStatusStuffList(state),
-        stuffList: getStuffList(state)
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchStuffList: () => dispatch(fetchStuffList())
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(StuffList)
+
+export default StuffList

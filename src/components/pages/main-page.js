@@ -1,10 +1,13 @@
 import React from "react";
-import StuffList from "../stuff-list";
+import StuffListContainer from "../../containers/stuff-list-container";
+import Modal from "../../containers/modal-container";
 
 const MainPage = () => (
     <div>
+
         <div className="container-lg stuff-list-main">
-            <StuffList/>
+
+            <StuffListContainer />
         </div>
 
     </div>

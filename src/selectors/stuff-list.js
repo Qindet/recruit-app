@@ -6,8 +6,18 @@ const getStuffList = (state) => {
     return state.stuffOperations.stuffList
 }
 
+const getStuffNumberPage = (state) => {
+    return state.stuffOperations.numberPage
+}
+
+const getStuffPageSize = (state) => {
+    return state.stuffOperations.pageSize
+}
+
 
 export {
     getLoadingStatusStuffList,
-    getStuffList
+    getStuffList,
+    getStuffNumberPage,
+    getStuffPageSize
 }

@@ -2,3 +2,12 @@
     margin-top: 5%;
     height: 600px;
 }
+
+.btn-cursor {
+    cursor: pointer;
+}
+
+.actives {
+    background-color: grey;
+    opacity: 0.6;
+}
