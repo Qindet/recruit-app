@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './form-styles.module.css'
 import {connect} from 'react-redux'
-import {addStuffLoaded} from "../../actions";
+import {addStuffLoaded, closeStuffModal, updateStuffItemLoaded} from "../../actions";
 import {useFormik} from 'formik'
 
 
@@ -19,8 +19,8 @@ const validate = values => {
     }
     if (!values.address) {
         errors.address = 'Required';
-    } else if (values.address.length > 25) {
-        errors.address = 'Must be 25 characters or less';
+    } else if (values.address.length > 35) {
+        errors.address = 'Must be 35 characters or less';
     }
     if (!values.email) {
         errors.email = 'Required';
@@ -30,19 +30,19 @@ const validate = values => {
     return errors;
 };
 
+function updateHelper(values,update,close) {
+    update({...values,date:new Date().toDateString()})
+    close()
+}
+
 const NewStuffForm = (props) => {
     const formik = useFormik({
-        initialValues: {
-            firstName: '',
-            lastName: '',
-            address: '',
-            position: '',
-            email: '',
-            fileControl: ''
-        },
+        initialValues: {...props.initialValues},
         validate,
         onSubmit: values => {
-            props.addStuffLoaded({...values,date:new Date().toDateString()})
+           props.flag==='update'?
+               updateHelper(values,props.updateStuffItem,props.closeModal)
+               : props.addStuffLoaded({...values,date:new Date().toDateString()})
         },
     });
     return (
@@ -97,8 +97,11 @@ const NewStuffForm = (props) => {
     )
 }
 
-const mapDispatchToProps = (dispatch) => {    return {
-        addStuffLoaded: (data) => dispatch(addStuffLoaded(data))
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addStuffLoaded: (data) => dispatch(addStuffLoaded(data)),
+        updateStuffItem: (item) => dispatch(updateStuffItemLoaded(item)),
+        closeModal: () => dispatch(closeStuffModal())
     }
 }
 

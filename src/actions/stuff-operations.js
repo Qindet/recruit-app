@@ -66,7 +66,10 @@ const fetchStuffList = () => async (dispatch) => {
 }
 
 
+
+
 export {
+    service,
     addStuffLoaded,
     fetchStuffList,
     changeStuffPage,

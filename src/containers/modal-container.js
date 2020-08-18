@@ -1,29 +1,34 @@
 import React from "react";
+import Modal from "../components/modal";
+import {connect} from "react-redux";
+import {getModalActivity, getModalItem} from '../selectors/general'
+import {closeStuffModal} from "../actions";
 
-const Modal = () => {
-    
+const ModalContainer = (props) => {
+
+    const modal = props.isStuffModalOpen ?
+        <Modal
+        item={props.modalItem}
+        onClose={props.closeStuffModal}
+        /> : null
+
     return (
-        <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabIndex="-1"
-             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div className="modal-body">
-                        ...
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Understood</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <div>
+           {modal}
+       </div>
     )
 }
 
-export default Modal
+const mapStateToProps = (state) => {
+    return {
+        isStuffModalOpen: getModalActivity(state),
+        modalItem: getModalItem(state)
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        closeStuffModal:  () => dispatch(closeStuffModal())
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ModalContainer)

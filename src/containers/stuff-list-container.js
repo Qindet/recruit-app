@@ -6,6 +6,7 @@ import Spinner from "../components/spinner"
 import {changeStuffPage, fetchStuffList, nextStuffPage, previousStuffPage} from "../actions/stuff-operations";
 import StuffListItem from "../components/stuff-list-item/stuff-list-item";
 import StuffList from "../components/stuff-list";
+import {deleteStuffItemLoaded, openStuffModal} from "../actions";
 
 const StuffListContainer = (props) => {
 
@@ -18,7 +19,7 @@ const StuffListContainer = (props) => {
     }
 
     const startItem = (props.numberPage) * props.pageSize + 1
-    const items = props.stuffList.map(item=><StuffListItem key={item.id} item={item}/>)
+    const items = props.stuffList.map(item=><StuffListItem key={item.id} item={item} onOpen={()=>props.openStuffModal(item)} onDelete={()=>props.deleteStuffItem(item)}/>)
         .filter((item,i)=> i+1>= startItem && i+1< startItem+props.pageSize)
     const paginationList = new Array(Math.ceil(props.stuffList.length/props.pageSize)).fill(1).map((item,i)=>
     {
@@ -51,7 +52,9 @@ const mapDispatchToProps = (dispatch) => {
         fetchStuffList: () => dispatch(fetchStuffList()),
         changeStuffPage: (i) => dispatch(changeStuffPage(i)),
        getPreviousPage: () => dispatch(previousStuffPage()),
-        getNextPage: () => dispatch(nextStuffPage())
+        getNextPage: () => dispatch(nextStuffPage()),
+        openStuffModal:  (item) => dispatch(openStuffModal(item)),
+        deleteStuffItem: (item) =>  dispatch(deleteStuffItemLoaded(item))
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(StuffListContainer)

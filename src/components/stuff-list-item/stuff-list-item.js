@@ -1,30 +1,33 @@
 import React from "react";
 import './stuff-list-item.css'
+
+
 const StuffListItem = (props) => {
     const styleItem = {
         maxWidth: "540px",
     }
-    console.log(props)
     return (
             <div className="card mb-3" style={styleItem} >
                 <div className="row no-gutters">
 
-                    <div className="col-md-8">
+                    <div className="col-md-12">
                         <div className="card-body">
                             <h5 className="card-title">{props.item.firstName}</h5>
                             <p className="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                             <p className="card-text"><small className="text-muted">Last updated {props.item.date}</small></p>
-                            <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-square-fill cart-upd"
-                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd"
-                                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/>
-                            </svg>
+                            <div className="d-flex justify-content-around">
+                                <button onClick={props.onOpen} className="btn btn-success">Update info</button>
+                                <button onClick={props.onDelete} className="btn btn-danger">Dismiss </button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
     )
 }
+
+
 
 export default StuffListItem

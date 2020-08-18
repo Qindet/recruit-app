@@ -6,10 +6,18 @@ const NewStuffPage = () => {
         marginTop: '5%',
         maxWidth: '800px'
     }
+    const  initialValues = {
+        firstName: '',
+            lastName: '',
+            address: '',
+            position: '',
+            email: '',
+            fileControl: ''
+    }
     return (
         <div className="container-sm" style={style}>
             <h1>Add new stuff member</h1>
-            <NewStuffForm />
+            <NewStuffForm initialValues={initialValues} flag="submit"/>
         </div>
     )
 }

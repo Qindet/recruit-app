@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b7b1e3-d282-40cd-8275-df7b0a396f5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/modal-container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/stuff-list-container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/delete-stuff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/general-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/update-stuff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modal/modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modal/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/general-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/selectors/general.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/stuff-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/stuff-operations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/main-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/main-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/modal-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/modal-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/stuff-list-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/stuff-list-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/stuff-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/stuff-operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selectors/stuff-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/stuff-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +107,8 @@
       <workItem from="1597398440042" duration="9497000" />
       <workItem from="1597468227443" duration="15347000" />
       <workItem from="1597554869551" duration="4680000" />
-      <workItem from="1597642146266" duration="17629000" />
+      <workItem from="1597642146266" duration="17678000" />
+      <workItem from="1597727383107" duration="14083000" />
     </task>
     <servers />
   </component>
@@ -145,10 +152,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597382206788" />
-    <state x="770" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1597647311915">
+    <state x="770" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1597743955538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="770" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597647311915" />
+    <state x="770" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597743955538" />
     <state x="2690" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597645809148" />
   </component>
 </project>

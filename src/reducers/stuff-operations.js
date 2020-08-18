@@ -14,6 +14,34 @@ export default function stuffOperations(state=initialState, action) {
                 ...state,
                 stuffList: newStuffList
             }
+        case 'UPDATE_STUFF_MEMBER_LOADED':
+            const idx = state.stuffList.findIndex((item) => item.id === action.payload.id)
+            const newList = [...state.stuffList.slice(0,idx),action.payload,...state.stuffList.slice(idx+1)]
+            return {
+                ...state,
+                loadingList: false,
+                stuffList: newList
+            }
+        case 'DELETE_STUFF_MEMBER_REQUESTED':
+        case 'UPDATE_STUFF_MEMBER_REQUESTED':
+            return {
+                ...state,
+                loadingList: true,
+            }
+        case 'DELETE_STUFF_MEMBER_FAILED':
+        case 'UPDATE_STUFF_MEMBER_FAILED':
+            return {
+                ...state,
+                errorList: true,
+            }
+        case 'DELETE_STUFF_MEMBER_LOADED':
+            const idxItem = state.stuffList.findIndex((item) => item.id === action.payload.id)
+            const newListUpdated = [...state.stuffList.slice(0,idxItem),...state.stuffList.slice(idxItem+1)]
+            return {
+                ...state,
+                loadingList: false,
+                stuffList: newListUpdated
+            }
         case 'FETCH_STUFF_LIST_REQUESTED':
             return {
                 ...state,
@@ -48,6 +76,7 @@ export default function stuffOperations(state=initialState, action) {
                 ...state,
                 numberPage: nextPage
             }
+
         default:
             return state
     }
