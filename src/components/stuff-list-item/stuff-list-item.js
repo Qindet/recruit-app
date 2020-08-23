@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import './stuff-list-item.css'
+import NewStuffForm from "../forms/new-stuff-form";
 
 
 const StuffListItem = (props) => {
+    const [isModalOpen,setModalOpen] = useState(false)
+
     const styleItem = {
         maxWidth: "540px",
     }
@@ -18,13 +21,40 @@ const StuffListItem = (props) => {
                             <p className="card-text"><small className="text-muted">Last updated {props.item.date}</small></p>
                             <div className="d-flex justify-content-around">
                                 <button onClick={props.onOpen} className="btn btn-success">Update info</button>
-                                <button onClick={props.onDelete} className="btn btn-danger">Dismiss </button>
+                                <button onClick={() => setModalOpen(true)} className="btn btn-danger">Dismiss </button>
+                                {isModalOpen?<ModalConfirm onDelete={props.onDelete} onClose={()=>setModalOpen(false)}/>:null}
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+    )
+}
+
+const ModalConfirm = (props) => {
+    const style = {
+        padding: '60px'
+    }
+    const textStyle = {
+        paddingBottom: '50px'
+    }
+    return (
+        <div className="modal" tabIndex="-1">
+            <div className="modal-dialog">
+
+                <div className="modal-content" style={style}>
+                    <div>
+                        <div style={textStyle}>Are you sure, you want to dismiss this employee?</div>
+                        <div className="d-flex justify-content-between">
+                            <button className="btn btn-success" onClick={props.onDelete}>Dismiss</button>
+                            <button className="btn btn-danger " onClick={props.onClose}>No</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

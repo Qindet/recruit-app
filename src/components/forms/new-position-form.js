@@ -1,6 +1,9 @@
 import React from "react";
-import {Formik,Form,Field} from 'formik'
+import {Formik, Form, Field} from 'formik'
 import * as Yup from 'yup'
+
+import {connect} from 'react-redux'
+import {addPositionLoaded} from "../../actions/position-operations";
 
 const Schema = Yup.object().shape({
     positionName: Yup.string()
@@ -8,13 +11,13 @@ const Schema = Yup.object().shape({
         .max(30, 'Too Long!')
         .required('Required'),
     salary: Yup.number()
-        .min(2, 'Too Short!')
+        .min(1, 'Too Short!')
         .max(10, 'Too Long!')
         .required('Required')
 });
 
 
-const NewPositionForm = () => {
+const NewPositionForm = (props) => {
 
 
     return (
@@ -27,10 +30,10 @@ const NewPositionForm = () => {
                }}
                validationSchema={Schema}
                onSubmit={values => {
-                   console.log(values);
+                   props.addPosition(values)
                }}
            >
-               {({ errors, touched }) => (
+               {({ errors, touched,handleReset }) => (
                    <Form>
                        <div className="form-group">
                            <label htmlFor="positionName">Position name</label>
@@ -57,4 +60,11 @@ const NewPositionForm = () => {
     )
 }
 
-export default NewPositionForm
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addPosition: (item) => dispatch(addPositionLoaded(item))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(NewPositionForm)

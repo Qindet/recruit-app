@@ -3,6 +3,7 @@ import classes from './form-styles.module.css'
 import {connect} from 'react-redux'
 import {addStuffLoaded, closeStuffModal, updateStuffItemLoaded} from "../../actions";
 import {useFormik} from 'formik'
+import {getPositions} from "../../selectors/positions";
 
 
 const validate = values => {
@@ -35,6 +36,11 @@ function updateHelper(values,update,close) {
     close()
 }
 
+function submitHelper(loaded,values,reset) {
+    loaded({...values,date:new Date().toDateString()})
+    reset()
+}
+
 const NewStuffForm = (props) => {
     const formik = useFormik({
         initialValues: {...props.initialValues},
@@ -42,7 +48,7 @@ const NewStuffForm = (props) => {
         onSubmit: values => {
            props.flag==='update'?
                updateHelper(values,props.updateStuffItem,props.closeModal)
-               : props.addStuffLoaded({...values,date:new Date().toDateString()})
+               : submitHelper(props.addStuffLoaded,{...values,date:new Date().toDateString()},formik.resetForm)
         },
     });
     return (
@@ -85,17 +91,20 @@ const NewStuffForm = (props) => {
                    <select onChange={formik.handleChange}
                            value={formik.values.position}
                            className="form-control" id="jobControl">
-                       <option>1</option>
-                       <option>2</option>
-                       <option>3</option>
-                       <option>4</option>
-                       <option>5</option>
+                       {props.positions.map((item)=> <option key={Date.now()}>{item.positionName}</option>)}
                    </select>
                </div>
                <button type="submit" className="btn btn-primary">Submit</button>
            </form>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        positions: getPositions(state)
+    }
+}
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -105,4 +114,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null,mapDispatchToProps)(NewStuffForm)
+export default connect(mapStateToProps,mapDispatchToProps)(NewStuffForm)

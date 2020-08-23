@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b7b1e3-d282-40cd-8275-df7b0a396f5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/delete-stuff.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/general-operations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/update-stuff.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modal/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modal/modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modal/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/general-operations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/selectors/general.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/position-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/position-operations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/selectors/positions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/stuff-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/stuff-operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/new-position-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/new-position-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/main-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/main-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-stuff-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/modal-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/modal-container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/stuff-list-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/stuff-list-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/stuff-operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/stuff-operations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +99,8 @@
       <workItem from="1597468227443" duration="15347000" />
       <workItem from="1597554869551" duration="4680000" />
       <workItem from="1597642146266" duration="17678000" />
-      <workItem from="1597727383107" duration="14083000" />
+      <workItem from="1597727383107" duration="14174000" />
+      <workItem from="1598160591979" duration="9042000" />
     </task>
     <servers />
   </component>
