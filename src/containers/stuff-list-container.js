@@ -6,12 +6,14 @@ import Spinner from "../components/spinner"
 import {changeStuffPage, fetchStuffList, nextStuffPage, previousStuffPage} from "../actions/stuff-operations";
 import StuffListItem from "../components/stuff-list-item/stuff-list-item";
 import StuffList from "../components/stuff-list";
-import {deleteStuffItemLoaded, openStuffModal} from "../actions";
+import {deleteStuffItemLoaded,
+    openStuffModal} from "../actions";
 
 const StuffListContainer = (props) => {
 
     useEffect(() => {
         props.fetchStuffList()
+
     },[props.fetchStuffList])
 
     if (props.loadingStatus) {
@@ -54,7 +56,8 @@ const mapDispatchToProps = (dispatch) => {
        getPreviousPage: () => dispatch(previousStuffPage()),
         getNextPage: () => dispatch(nextStuffPage()),
         openStuffModal:  (item) => dispatch(openStuffModal(item)),
-        deleteStuffItem: (item) =>  dispatch(deleteStuffItemLoaded(item))
+        deleteStuffItem: (item) =>  dispatch(deleteStuffItemLoaded(item)),
+
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(StuffListContainer)

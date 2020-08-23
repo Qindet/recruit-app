@@ -6,7 +6,7 @@ import {closeStuffModal,openStuffModal} from './general-operations'
 
 import {updateStuffItemLoaded} from './update-stuff'
 import {deleteStuffItemLoaded} from "./delete-stuff";
-import {addPosition} from './position-operations'
+import {fetchPositions} from './position-operations'
 export {
     addStuffLoaded,
     changeStuffPage,
@@ -15,5 +15,6 @@ export {
     closeStuffModal,
     openStuffModal,
     updateStuffItemLoaded,
-    deleteStuffItemLoaded
+    deleteStuffItemLoaded,
+    fetchPositions
 }

@@ -1,64 +1,74 @@
-import React from "react";
-import {Formik, Form, Field} from 'formik'
+import React, {useEffect} from "react";
+import {Formik, Form, Field, useFormik} from 'formik'
 import * as Yup from 'yup'
 
 import {connect} from 'react-redux'
 import {addPositionLoaded} from "../../actions/position-operations";
+import classes from "./form-styles.module.css";
 
-const Schema = Yup.object().shape({
-    positionName: Yup.string()
-        .min(2, 'Too Short!')
-        .max(30, 'Too Long!')
-        .required('Required'),
-    salary: Yup.number()
-        .min(1, 'Too Short!')
-        .max(10, 'Too Long!')
-        .required('Required')
-});
+const validate = values => {
+    const errors = {};
+    if (!values.positionName) {
+        errors.positionName = 'Required';
+    } else if (values.positionName.length > 15) {
+        errors.positionName = 'Must be 15 characters or less';
+    }
+    if (!values.salary) {
+        errors.salary = 'Required';
+    } else if (values.salary.length > 10) {
+        errors.salary = 'Must be 10 characters or less';
+    } else if (!Number.isInteger( +values.salary)) {
+        errors.salary = 'Must be number';
+    }
+    return errors;
+};
+
+
 
 
 const NewPositionForm = (props) => {
-
+    const formik = useFormik({
+        initialValues: {positionName:'',salary:''},
+        validate,
+        onSubmit: values => {
+            props.addPosition(values)
+            formik.resetForm()
+        },
+    });
 
     return (
        <>
            <h1>Add new position</h1>
-           <Formik
-               initialValues={{
-                   positionName: '',
-                   salary: ''
-               }}
-               validationSchema={Schema}
-               onSubmit={values => {
-                   props.addPosition(values)
-               }}
+           <form
+               onSubmit={formik.handleSubmit}
            >
-               {({ errors, touched,handleReset }) => (
-                   <Form>
+
                        <div className="form-group">
                            <label htmlFor="positionName">Position name</label>
-                           <Field  className="form-control" name="positionName" id="positionName" />
-                           {errors.positionName && touched.positionName ? (
-                               <div>{errors.positionName}</div>
+                           <input  className="form-control"
+                                   name="positionName" id="positionName"
+                           value={formik.values.positionName}
+                           onChange={formik.handleChange}/>
+                           {formik.errors.positionName && formik.touched.positionName ? (
+                               <div className={classes.formMessageError}>{formik.errors.positionName}</div>
                            ) : null}
                        </div>
                        <div className="form-group">
                            <label htmlFor="salary">Salary</label>
-                           <Field className="form-control" name="salary" id="salary"/>
-                           {errors.salary && touched.salary ? (
-                               <div>{errors.salary}</div>
+                           <input className="form-control"
+                                  name="salary" id="salary"
+                           value={formik.values.salary}
+                                  onChange={formik.handleChange}/>
+                           {formik.errors.salary && formik.touched.salary ? (
+                               <div className={classes.formMessageError}>{formik.errors.salary}</div>
                            ) : null}
                        </div>
                        <button type="submit" className="btn btn-primary">Submit</button>
-                   </Form>
-                   )}
-           </Formik>
-
-
-
+           </form>
        </>
     )
 }
+
 
 
 const mapDispatchToProps = (dispatch) => {

@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classes from './form-styles.module.css'
 import {connect} from 'react-redux'
-import {addStuffLoaded, closeStuffModal, updateStuffItemLoaded} from "../../actions";
+import {addStuffLoaded, closeStuffModal, fetchPositions, updateStuffItemLoaded} from "../../actions";
 import {useFormik} from 'formik'
 import {getPositions} from "../../selectors/positions";
 
@@ -42,6 +42,9 @@ function submitHelper(loaded,values,reset) {
 }
 
 const NewStuffForm = (props) => {
+    useEffect(() => {
+        props.fetchPositions()
+    },[props.fetchPositions])
     const formik = useFormik({
         initialValues: {...props.initialValues},
         validate,
@@ -91,7 +94,7 @@ const NewStuffForm = (props) => {
                    <select onChange={formik.handleChange}
                            value={formik.values.position}
                            className="form-control" id="jobControl">
-                       {props.positions.map((item)=> <option key={Date.now()}>{item.positionName}</option>)}
+                       {props.positions.map((item)=> <option key={item.id}>{item.positionName}</option>)}
                    </select>
                </div>
                <button type="submit" className="btn btn-primary">Submit</button>
@@ -110,7 +113,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addStuffLoaded: (data) => dispatch(addStuffLoaded(data)),
         updateStuffItem: (item) => dispatch(updateStuffItemLoaded(item)),
-        closeModal: () => dispatch(closeStuffModal())
+        closeModal: () => dispatch(closeStuffModal()),
+        fetchPositions: () => dispatch(fetchPositions())
     }
 }
 
