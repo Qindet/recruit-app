@@ -23,13 +23,19 @@ const deletePosition = (payload) => {
         payload
     }
 }
+
+const failedPosition = () => {
+    return {
+        type: 'POSITION_FAILED'
+    }
+}
 const deletePositionLoaded = (item) => async (dispatch) => {
     try {
         dispatch(positionRequested())
         await service.deleteItem(item,'position')
         dispatch(deletePosition(item))
     } catch (e) {
-
+        dispatch(failedPosition())
     }
 }
 
@@ -40,15 +46,24 @@ const positionRequested = () => {
 }
 
 const fetchPositions = () => async (dispatch) => {
-    dispatch(positionRequested())
-    const items = await service.getItems('position')
-    dispatch(getPosition(items))
+    try {
+        dispatch(positionRequested())
+        const items = await service.getItems('position')
+        dispatch(getPosition(items))
+    } catch (e) {
+        dispatch(failedPosition())
+    }
+
 }
 
 
 const addPositionLoaded = (item) => async (dispatch) => {
-    const {data:{name}} = await service.postItem(item,'position')
-    dispatch(addPosition({...item, id:name}))
+    try {
+        const {data:{name}} = await service.postItem(item,'position')
+        dispatch(addPosition({...item, id:name}))
+    } catch (e) {
+        dispatch(failedPosition())
+    }
 }
 
 

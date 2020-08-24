@@ -1,6 +1,7 @@
 const initialState = {
     positionItems: [],
-    loadingPositions: true
+    loadingPositions: true,
+    errorPositions: false
 }
 
 export default function positionOperations(state=initialState, action) {
@@ -10,18 +11,28 @@ export default function positionOperations(state=initialState, action) {
             return {
                 ...state,
                 loadingPositions: false,
-                positionItems: newPositionList
+                positionItems: newPositionList,
+                errorPositions: false
+
             }
         case 'GET_POSITION':
             return {
                 ...state,
                 loadingPositions: false,
-                positionItems: action.payload
+                positionItems: action.payload,
+                errorPositions: false
+
             }
         case 'POSITION_REQUESTED':
             return {
                 ...state,
+                positionItems: [],
                 loadingPositions: true
+            }
+        case 'POSITION_FAILED':
+            return {
+                ...state,
+                errorPositions: true
             }
         case 'DELETE_POSITION':
             const idx = state.positionItems.findIndex(item=>item.id===action.payload.id)
@@ -29,7 +40,9 @@ export default function positionOperations(state=initialState, action) {
             return {
                 ...state,
                 loadingPositions: false,
-                positionItems: newItems
+                positionItems: newItems,
+                errorPositions: false
+
             }
         default:
             return state

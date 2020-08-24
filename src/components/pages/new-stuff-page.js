@@ -11,8 +11,7 @@ const NewStuffPage = () => {
             lastName: '',
             address: '',
             position: '',
-            email: '',
-            fileControl: ''
+            email: ''
     }
     return (
         <div className="container-sm" style={style}>

@@ -42,9 +42,10 @@ function submitHelper(loaded,values,reset) {
 }
 
 const NewStuffForm = (props) => {
+    const {fetchPositions}= props
     useEffect(() => {
-        props.fetchPositions()
-    },[props])
+        fetchPositions()
+    },[fetchPositions])
     const formik = useFormik({
         initialValues: {...props.initialValues},
         validate,
@@ -91,13 +92,17 @@ const NewStuffForm = (props) => {
                </div>
                <div className="form-group">
                    <label htmlFor="jobControl">Choose job position</label>
-                   <select onChange={formik.handleChange}
-                           value={formik.values.position}
-                           className="form-control" id="jobControl">
+                   <select
+                       onChange={formik.handleChange}
+                       value={formik.values.position}
+                           className="form-control" id="position">
                        {props.positions?
-                           props.positions.map((item)=> <option key={item.id}>{item.positionName}</option>)
+                           props.positions.map((item)=> <option
+                               key={item.id}
+                           >{item.positionName}</option>)
                        :<option>empty</option>}
                    </select>
+
                </div>
                <button type="submit" className="btn btn-primary">Submit</button>
            </form>

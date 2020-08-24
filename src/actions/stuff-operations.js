@@ -12,6 +12,7 @@ const addStuff = (payload) => {
 }
 
 const addStuffLoaded = (stuffForm) => async (dispatch) => {
+
     const {data:{name}} = await service.postItem(stuffForm,'stuff')
     dispatch(addStuff({...stuffForm,id:name}))
 }
