@@ -7,6 +7,7 @@ import NavBar from "../navbar";
 import NewStuffPage from "../pages/new-stuff-page";
 import MainPage from "../pages/main-page";
 import NewPositionPage from "../pages/new-position-page";
+import PositionPage from "../pages/positions-page";
 
 const App = () => (
     <>
@@ -15,7 +16,8 @@ const App = () => (
                 <Route path="/" exact component={MainPage}/>
                 <Route path="/new-stuff" component={NewStuffPage}/>
                 <Route path="/new-position" component={NewPositionPage}/>
-                <Redirect to="/"/>
+                <Route path="/positions" component={PositionPage}/>
+                <Redirect to="/"/>h
             </Switch>
     </>
 )

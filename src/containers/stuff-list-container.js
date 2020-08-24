@@ -10,11 +10,11 @@ import {deleteStuffItemLoaded,
     openStuffModal} from "../actions";
 
 const StuffListContainer = (props) => {
-
+    const {fetchStuffList} = props
     useEffect(() => {
-        props.fetchStuffList()
+        fetchStuffList()
 
-    },[props.fetchStuffList])
+    },[fetchStuffList])
 
     if (props.loadingStatus) {
         return <Spinner />

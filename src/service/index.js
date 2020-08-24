@@ -19,9 +19,11 @@ export default class recruitService {
     getItems = async (type) => {
         try {
             const res = await axios.get(`${this._URL}/${type}.json?`)
-            console.log(`${this._URL}/${type}.json`)
             if (res.status !== 200) {
                 throw new Error('Error')
+            }
+            if (!res.data) {
+                return
             }
             return Object.keys(res.data).map(item=> {
                 return {...res.data[item],id:item}

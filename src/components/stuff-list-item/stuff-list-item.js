@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import './stuff-list-item.css'
-import NewStuffForm from "../forms/new-stuff-form";
 
 
 const StuffListItem = (props) => {

@@ -2,7 +2,7 @@ import recruitService from "../service";
 
 const service = new recruitService()
 
-const ADD_STUFF_MEMBER = 'ADD_STUFF_MEMBER'
+
 
 const addStuff = (payload) => {
     return {

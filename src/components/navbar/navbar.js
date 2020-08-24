@@ -1,18 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import {NavLink} from 'react-router-dom'
 
 const NavBar = () => {
-
+    let clz = 'collapse navbar-collapse'
+    const [toggleBar,setToggleBar] = useState(false)
+    if (toggleBar) {
+        clz = 'navbar-collapse'
+    }
     return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">Recruit App</a>
+                <NavLink className="navbar-brand"  to="/">Recruit App</NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                        aria-label="Toggle navigation"
+                onClick={()=>setToggleBar(s=>!s)}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a className="dropdown-item" href="#">Action</a>
+                    <a className="dropdown-item" href="#">Another action</a>
+                    <a className="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div className={clz} id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                             <NavLink className="nav-link" to="/">Home</NavLink>
@@ -24,13 +33,10 @@ const NavBar = () => {
                             <NavLink className="nav-link" to="new-position">Add new position</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+                            <NavLink className="nav-link" to="positions">Positions</NavLink>
                         </li>
                     </ul>
-                    <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+
                 </div>
             </nav>
     )

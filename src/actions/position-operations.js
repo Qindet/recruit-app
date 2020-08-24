@@ -17,9 +17,31 @@ const getPosition = (payload) => {
     }
 }
 
+const deletePosition = (payload) => {
+    return {
+        type: 'DELETE_POSITION',
+        payload
+    }
+}
+const deletePositionLoaded = (item) => async (dispatch) => {
+    try {
+        dispatch(positionRequested())
+        await service.deleteItem(item,'position')
+        dispatch(deletePosition(item))
+    } catch (e) {
+
+    }
+}
+
+const positionRequested = () => {
+    return {
+        type: 'POSITION_REQUESTED'
+    }
+}
+
 const fetchPositions = () => async (dispatch) => {
+    dispatch(positionRequested())
     const items = await service.getItems('position')
-    console.log(items)
     dispatch(getPosition(items))
 }
 
@@ -31,5 +53,6 @@ const addPositionLoaded = (item) => async (dispatch) => {
 
 
 export {
-    addPositionLoaded,fetchPositions
+    addPositionLoaded,fetchPositions,
+    deletePositionLoaded
 }
