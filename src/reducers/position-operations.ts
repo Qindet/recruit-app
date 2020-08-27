@@ -6,6 +6,7 @@ import {
     POSITION_FAILED,
     POSITION_REQUESTED
 } from "../actions/action-types";
+import {ActionsPositionOperationsType} from "../ts-types/action-types/position-operations-types";
 
 const initialState: PositionOperationsStateType = {
     positionItems: [],
@@ -13,7 +14,7 @@ const initialState: PositionOperationsStateType = {
     errorPositions: false
 }
 
-export default function positionOperations(state=initialState, action:any): PositionOperationsStateType {
+export default function positionOperations(state=initialState, action:ActionsPositionOperationsType): PositionOperationsStateType {
     switch (action.type) {
         case ADD_POSITION:
             const newPositionList = [...state.positionItems,action.payload]

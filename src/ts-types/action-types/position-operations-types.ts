@@ -29,3 +29,6 @@ export type FailedPositionActionType = {
 export type PositionRequestedActionType = {
     type: typeof POSITION_REQUESTED
 }
+
+export type ActionsPositionOperationsType = AddPositionActionType | GetPositionActionType |
+    DeletePositionActionType | FailedPositionActionType | PositionRequestedActionType

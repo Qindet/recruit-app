@@ -1,5 +1,6 @@
 import recruitService from "../service";
 import {
+    ActionsPositionOperationsType,
     AddPositionActionType,
     DeletePositionActionType,
     FailedPositionActionType,
@@ -8,6 +9,9 @@ import {
 } from "../ts-types/action-types/position-operations-types";
 import {PositionItemType} from "../ts-types/main-types";
 import {ADD_POSITION, DELETE_POSITION, GET_POSITION, POSITION_FAILED, POSITION_REQUESTED} from "./action-types";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "../reducers";
+import {ActionsDeleteStuffType} from "../ts-types/action-types/delete-stuff-types";
 
 const service = new recruitService()
 
@@ -38,7 +42,9 @@ const failedPosition = (): FailedPositionActionType => {
         type: POSITION_FAILED
     }
 }
-const deletePositionLoaded = (item: PositionItemType) => async (dispatch:any) => {
+const deletePositionLoaded = (item: PositionItemType):
+    ThunkAction<Promise<void>,AppStateType,unknown,ActionsPositionOperationsType> =>
+    async (dispatch) => {
     try {
         dispatch(positionRequested())
         await service.deleteItem(item,'position')
@@ -54,7 +60,9 @@ const positionRequested = (): PositionRequestedActionType => {
     }
 }
 
-const fetchPositions = () => async (dispatch:any) => {
+const fetchPositions = ():
+    ThunkAction<Promise<void>,AppStateType,unknown,ActionsPositionOperationsType> =>
+    async (dispatch) => {
     try {
         dispatch(positionRequested())
         const items: Array<PositionItemType> = await service.getItems('position') || []
@@ -66,7 +74,9 @@ const fetchPositions = () => async (dispatch:any) => {
 }
 
 
-const addPositionLoaded = (item: PositionItemType) => async (dispatch:any) => {
+const addPositionLoaded = (item: PositionItemType):
+    ThunkAction<Promise<void>,AppStateType,unknown,ActionsPositionOperationsType> =>
+    async (dispatch) => {
     try {
         const {data:{name}} = await service.postItem(item,'position')
         dispatch(addPosition({...item, id:name}))

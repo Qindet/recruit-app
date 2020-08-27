@@ -6,6 +6,19 @@ import {
 } from "../../actions/action-types";
 import {service} from "../../actions/stuff-operations";
 import {StuffItemType} from "../main-types";
+import {
+    AddPositionActionType,
+    DeletePositionActionType,
+    FailedPositionActionType,
+    GetPositionActionType, PositionRequestedActionType
+} from "./position-operations-types";
+import {UpdateStuffActionType, UpdateStuffFailedActionType, UpdateStuffRequestedActionType} from "./update-stuff-types";
+import {
+    ActionsDeleteStuffType,
+    DeleteStuffActionType,
+    DeleteStuffFailedActionType,
+    DeleteStuffRequestedActionType
+} from "./delete-stuff-types";
 
 
 
@@ -40,3 +53,8 @@ export type PreviousStuffPageActionType = {
 export type NextStuffPageActionType = {
         type: typeof NEXT_STUFF_PAGE
 }
+
+export type ActionsStuffOperationsType = AddStuffActionType | StuffListRequestedActionType |
+    StuffListLoadedActionType | StuffListFailedActionType | ChangeStuffPageActionType
+    | PreviousStuffPageActionType | NextStuffPageActionType | UpdateStuffActionType
+    | UpdateStuffFailedActionType | UpdateStuffRequestedActionType | ActionsDeleteStuffType

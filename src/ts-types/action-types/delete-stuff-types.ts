@@ -17,3 +17,5 @@ export type DeleteStuffRequestedActionType = {
 export type DeleteStuffFailedActionType = {
     type: typeof DELETE_STUFF_MEMBER_FAILED
 }
+
+export type ActionsDeleteStuffType = DeleteStuffActionType | DeleteStuffRequestedActionType | DeleteStuffFailedActionType

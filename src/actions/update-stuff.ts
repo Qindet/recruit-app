@@ -1,11 +1,14 @@
 import {service} from "./stuff-operations";
 import {
+    ActionsUpdateStuffType,
     UpdateStuffActionType,
     UpdateStuffFailedActionType,
     UpdateStuffRequestedActionType
 } from "../ts-types/action-types/update-stuff-types";
 import {StuffItemType} from "../ts-types/main-types";
 import {UPDATE_STUFF_MEMBER_FAILED, UPDATE_STUFF_MEMBER_LOADED, UPDATE_STUFF_MEMBER_REQUESTED} from "./action-types";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "../reducers";
 
 const updateStuff = (payload: StuffItemType): UpdateStuffActionType => {
     return {
@@ -23,7 +26,9 @@ const updateStuffFailed = (): UpdateStuffFailedActionType => {
         type: UPDATE_STUFF_MEMBER_FAILED
     }
 }
-const updateStuffItemLoaded = (item: StuffItemType) => async (dispatch:any) => {
+const updateStuffItemLoaded = (item: StuffItemType):
+    ThunkAction<Promise<void>,AppStateType,unknown,ActionsUpdateStuffType> =>
+    async (dispatch) => {
     try {
         dispatch(updateStuffRequested())
         const result = await service.updateItem(item,'stuff')

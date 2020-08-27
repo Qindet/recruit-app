@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b7b1e3-d282-40cd-8275-df7b0a396f5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/new-stuff-form-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/new-position-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/new-position-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/new-stuff-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/new-stuff-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/position-list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/position-list/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/position-list/position-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/position-list/position-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list-item/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list-item/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list-item/stuff-list-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stuff-list/stuff-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/positions-list-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/positions-list-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/stuff-list-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/stuff-list-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts-types/main-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/main-types.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts-types/props-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/props-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/delete-stuff.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/delete-stuff.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/position-operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/position-operations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/stuff-operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/stuff-operations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/update-stuff.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/update-stuff.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/general-operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/general-operations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/position-operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/position-operations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/stuff-operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/stuff-operations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts-types/action-types/delete-stuff-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/action-types/delete-stuff-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts-types/action-types/general-operations-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/action-types/general-operations-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts-types/action-types/position-operations-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/action-types/position-operations-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts-types/action-types/stuff-operations-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/action-types/stuff-operations-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts-types/action-types/update-stuff-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts-types/action-types/update-stuff-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\igor\Desktop\ts\recruit-app-ts\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -125,9 +123,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="562" y="209" key="#ESLint" timestamp="1598528791927">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="450" y="142" key="#ESLint" timestamp="1598540257525">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="450" y="142" key="#ESLint/0.0.1536.824@0.0.1536.824" timestamp="1598540257525" />
     <state x="562" y="209" key="#ESLint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598528791927" />
     <state x="878" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598526964624">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -138,21 +137,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598529571124" />
-    <state width="1356" height="258" key="GridCell.Tab.0.bottom" timestamp="1597407961275">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="208" key="GridCell.Tab.0.bottom" timestamp="1598540091700">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1259" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598540091700" />
     <state width="1356" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597407961275" />
-    <state width="1356" height="258" key="GridCell.Tab.0.center" timestamp="1597407961275">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="208" key="GridCell.Tab.0.center" timestamp="1598540091700">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1259" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598540091700" />
     <state width="1356" height="258" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597407961275" />
-    <state width="1356" height="258" key="GridCell.Tab.0.left" timestamp="1597407961275">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="208" key="GridCell.Tab.0.left" timestamp="1598540091700">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1259" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598540091700" />
     <state width="1356" height="258" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597407961275" />
-    <state width="1356" height="258" key="GridCell.Tab.0.right" timestamp="1597407961275">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="208" key="GridCell.Tab.0.right" timestamp="1598540091700">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1259" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598540091700" />
     <state width="1356" height="258" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597407961275" />
     <state x="768" y="160" key="RollbackChangesDialog" timestamp="1597381615136">
       <screen x="0" y="0" width="1920" height="1040" />

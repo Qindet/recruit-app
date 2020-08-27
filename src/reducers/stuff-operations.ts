@@ -11,6 +11,7 @@ import {
     UPDATE_STUFF_MEMBER_LOADED,
     UPDATE_STUFF_MEMBER_REQUESTED
 } from "../actions/action-types";
+import {ActionsStuffOperationsType} from "../ts-types/action-types/stuff-operations-types";
 
 const initialState: StufOperationStateType = {
     stuffList: [],
@@ -20,7 +21,7 @@ const initialState: StufOperationStateType = {
     numberPage: 0
 }
 
-export default function stuffOperations(state=initialState, action:any): StufOperationStateType {
+export default function stuffOperations(state=initialState, action:ActionsStuffOperationsType): StufOperationStateType {
     switch (action.type) {
         case ADD_STUFF_MEMBER:
             const newStuffList = [...state.stuffList,action.payload]

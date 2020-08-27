@@ -9,3 +9,5 @@ export type OpenStuffModalActionType = {
     type: typeof OPEN_STUFF_MODAL,
     payload: StuffItemType
 }
+
+export type ActionsGeneralOperationsType = OpenStuffModalActionType | CloseStuffModalActionType

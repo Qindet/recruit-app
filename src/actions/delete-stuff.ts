@@ -2,10 +2,13 @@ import {service} from "./stuff-operations";
 import {DELETE_STUFF_MEMBER_FAILED, DELETE_STUFF_MEMBER_LOADED, DELETE_STUFF_MEMBER_REQUESTED} from "./action-types";
 import {StuffItemType} from "../ts-types/main-types";
 import {
+    ActionsDeleteStuffType,
     DeleteStuffActionType,
     DeleteStuffFailedActionType,
     DeleteStuffRequestedActionType
 } from "../ts-types/action-types/delete-stuff-types";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "../reducers";
 
 const deleteStuff = (payload: StuffItemType): DeleteStuffActionType => {
     return {
@@ -24,7 +27,9 @@ const deleteStuffFailed = (): DeleteStuffFailedActionType => {
     }
 }
 
-const deleteStuffItemLoaded = (item:StuffItemType) => async (dispatch:any) => {
+const deleteStuffItemLoaded = (item:StuffItemType):
+    ThunkAction<Promise<void>,AppStateType,unknown,ActionsDeleteStuffType> =>
+    async (dispatch) => {
     try {
         dispatch(deleteStuffRequested())
         await service.deleteItem(item,'stuff')

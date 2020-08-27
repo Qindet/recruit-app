@@ -7,15 +7,19 @@ import {
 } from "./action-types";
 
 import {
+    ActionsStuffOperationsType,
     AddStuffActionType,
     ChangeStuffPageActionType,
-     NextStuffPageActionType,
-        PreviousStuffPageActionType,
+    NextStuffPageActionType,
+    PreviousStuffPageActionType,
     StuffListFailedActionType,
     StuffListLoadedActionType,
     StuffListRequestedActionType
 } from "../ts-types/action-types/stuff-operations-types"
 import {StuffItemType} from "../ts-types/main-types";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "../reducers";
+import {ActionsPositionOperationsType} from "../ts-types/action-types/position-operations-types";
 const service = new recruitService()
 
 
@@ -72,7 +76,9 @@ const nextStuffPage = (): NextStuffPageActionType => {
     }
 }
 
-const fetchStuffList = () => async (dispatch:any) => {
+const fetchStuffList = ():
+    ThunkAction<Promise<void>,AppStateType,unknown,ActionsStuffOperationsType> =>
+    async (dispatch) => {
     try {
         dispatch(stuffListRequested())
         const items: Array<StuffItemType> = await service.getItems('stuff') || []
