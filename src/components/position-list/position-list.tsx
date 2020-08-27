@@ -1,15 +1,18 @@
 import React from "react";
 import './position-list.css'
 import {deletePositionLoaded} from "../../actions/position-operations";
+import {PositionListPropsType} from "../../ts-types/props-types";
 
-const PositionList = (props) => {
-    if (!props.items) {
+
+
+const PositionList: React.FC<PositionListPropsType> = ({items,dispatch}) => {
+    if (!items) {
         return <div className="container">Empty</div>
     }
     return (
         <div className="container-sm">
             <ul className="list-group">
-                {props.items.map(item=>
+                {items.map(item=>
                     <li key={item.id} className="list-group-item">
                         <div className="d-flex justify-content-between">
                             <div>Position: {item.positionName} salary: {item.salary}</div>
@@ -17,7 +20,7 @@ const PositionList = (props) => {
                                  className="bi bi-trash trash-icon" fill="currentColor"
                                  xmlns="http://www.w3.org/2000/svg"
 
-                                 onClick={()=>props.dispatch(deletePositionLoaded(item))}>
+                                 onClick={()=>dispatch(deletePositionLoaded(item))}>
                                 <path
                                     d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                 <path fillRule="evenodd"

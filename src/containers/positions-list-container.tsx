@@ -6,11 +6,12 @@ import {fetchPositions} from "../actions";
 import PositionList from "../components/position-list";
 import {getLoadingPositions, getPositions} from "../selectors/positions";
 import {AppStateType} from "../reducers";
+import {PositionItemType} from "../ts-types/main-types";
 
 const PositionListContainer: React.FC = () => {
 
     const dispatch = useDispatch()
-    const items = useSelector<AppStateType>(state=>getPositions(state))
+    const items:Array<PositionItemType>|unknown =  useSelector<AppStateType>(state=>{getPositions(state)})
     const loadingItems = useSelector<AppStateType>(state=>getLoadingPositions(state))
     useEffect(() => {
         dispatch(fetchPositions())

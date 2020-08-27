@@ -2,12 +2,17 @@ import React from "react";
 import {useFormik} from 'formik'
 
 
-import {connect} from 'react-redux'
+import {connect, MapDispatchToPropsParam} from 'react-redux'
 import {addPositionLoaded} from "../../actions/position-operations";
 import classes from "./form-styles.module.css";
+import {NewPositionFormValidFieldsType, PositionItemType, StuffItemType} from "../../ts-types/main-types";
+import {AppStateType} from "../../reducers";
 
-const validate = values => {
-    const errors = {};
+const validate = (values:NewPositionFormValidFieldsType) => {
+    const errors:NewPositionFormValidFieldsType = {
+        positionName: '',
+        salary: ''
+    };
     if (!values.positionName) {
         errors.positionName = 'Required';
     } else if (values.positionName.length > 15) {
@@ -24,14 +29,22 @@ const validate = values => {
 };
 
 
+//
+type NewPositionFormPropsType = MapStatePropsType & MapDispatchPropsType & OwnProps
+type MapStatePropsType = {}
+type MapDispatchPropsType = {
+    addPosition: (item: PositionItemType) => void
+}
+type OwnProps = {}
+//
 
-
-const NewPositionForm = (props) => {
+const NewPositionForm: React.FC<NewPositionFormPropsType> = ({addPosition}) => {
+    const init: PositionItemType =  {positionName:'',salary:''}
     const formik = useFormik({
-        initialValues: {positionName:'',salary:''},
+        initialValues: init,
         validate,
         onSubmit: values => {
-            props.addPosition(values)
+            addPosition(values)
             formik.resetForm()
         },
     });
@@ -71,10 +84,10 @@ const NewPositionForm = (props) => {
 
 
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch:any): MapDispatchPropsType => {
     return {
         addPosition: (item) => dispatch(addPositionLoaded(item))
     }
 }
 
-export default connect(null,mapDispatchToProps)(NewPositionForm)
+export default connect<null,MapDispatchPropsType,null,AppStateType>(null,mapDispatchToProps)(NewPositionForm)

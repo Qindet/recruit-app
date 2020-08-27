@@ -1,8 +1,8 @@
 import React from "react";
 import './modal.css'
-import NewStuffForm from "../forms/new-stuff-form";
-import {StuffItemType} from "../../ts-types/main-types";
 import {ModalPropsType} from "../../ts-types/props-types";
+// @ts-ignore
+import NewStuffFormContainer from "../../containers/new-stuff-form-container"
 
 
 
@@ -18,7 +18,7 @@ const Modal: React.FC<ModalPropsType> = ({item,onClose}) => {
                     <div className="align-self-end">
                         <button className="btn btn-danger p-lg-1" onClick={onClose}>Close Modal</button>
                     </div>
-                    <NewStuffForm initialValues={item} flag="update"/>
+                    <NewStuffFormContainer />
 
                 </div>
             </div>

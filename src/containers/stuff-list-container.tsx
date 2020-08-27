@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {ComponentElement, useEffect} from "react";
 import {connect} from 'react-redux'
 
 import {getLoadingStatusStuffList, getStuffList,getStuffPageSize,getStuffNumberPage} from "../selectors/stuff-list";
@@ -12,7 +12,7 @@ import {StuffItemType} from "../ts-types/main-types";
 import {AppStateType} from "../reducers";
 
 //
-type StuffListContainerPropsType = MapStatePropsType & MapDispatchPropsType & OwnProps
+type StuffFormContainerPropsType = MapStatePropsType & MapDispatchPropsType & OwnProps
 type MapStatePropsType = {
     loadingStatus: boolean,
     stuffList: Array<StuffItemType>,
@@ -30,7 +30,7 @@ type MapDispatchPropsType = {
 type OwnProps = {}
 //
 
-const StuffListContainer: React.FC<StuffListContainerPropsType> = ({fetchStuffList,loadingStatus,numberPage,
+const StuffListContainer: React.FC<StuffFormContainerPropsType> = ({fetchStuffList,loadingStatus,numberPage,
                                                                        pageSize,stuffList,openStuffModal,deleteStuffItem,changeStuffPage,
                                                                        getNextPage,getPreviousPage}) => {
     useEffect(() => {
@@ -40,10 +40,10 @@ const StuffListContainer: React.FC<StuffListContainerPropsType> = ({fetchStuffLi
     if (loadingStatus) {
         return <Spinner />
     }
-    const startItem = (numberPage) * pageSize + 1
-    const items = stuffList.map(item=><StuffListItem key={item.id} item={item} onOpen={()=>openStuffModal(item)} onDelete={()=>deleteStuffItem(item)}/>)
+    const startItem:number = (numberPage) * pageSize + 1
+    const items: Array<JSX.Element> = stuffList.map(item=><StuffListItem key={item.id} item={item} onOpen={()=>openStuffModal(item)} onDelete={()=>deleteStuffItem(item)}/>)
         .filter((item,i)=> i+1>= startItem && i+1< startItem+pageSize)
-    const paginationList = new Array(Math.ceil(stuffList.length/pageSize)).fill(1).map((item,i)=>
+    const paginationList: Array<JSX.Element> = new Array(Math.ceil(stuffList.length/pageSize)).fill(1).map((item,i)=>
     {
         const style = i===numberPage? `page-item page-link  btn-cursor actives`: 'page-item page-link  btn-cursor'
         return <li key={i} className={style} onClick={()=>changeStuffPage(i)}>{i+1}</li>
