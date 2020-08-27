@@ -1,12 +1,13 @@
 import React from "react";
 import NewStuffForm from "../forms/new-stuff-form";
+import {StuffItemType} from "../../ts-types/main-types";
 
 const NewStuffPage = () => {
     const style = {
         marginTop: '5%',
         maxWidth: '800px'
     }
-    const  initialValues = {
+    const  initialValues: StuffItemType = {
         firstName: '',
             lastName: '',
             address: '',

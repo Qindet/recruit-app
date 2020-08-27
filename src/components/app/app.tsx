@@ -9,7 +9,7 @@ import MainPage from "../pages/main-page";
 import NewPositionPage from "../pages/new-position-page";
 import PositionPage from "../pages/positions-page";
 
-const App = () => (
+const App:React.FC = () => (
     <>
         <NavBar/>
             <Switch>

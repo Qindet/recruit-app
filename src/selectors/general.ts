@@ -1,10 +1,11 @@
+import {AppStateType} from "../reducers";
 
 
-const getModalActivity = (state) => {
+const getModalActivity = (state: AppStateType) => {
     return state.generalOperations.isStuffModalOpen
 }
 
-const getModalItem = (state) => {
+const getModalItem = (state: AppStateType) => {
     return state.generalOperations.modalItem
 }
 

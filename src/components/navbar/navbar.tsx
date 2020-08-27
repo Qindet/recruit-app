@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {NavLink} from 'react-router-dom'
 
 const NavBar = () => {
-    let clz = 'collapse navbar-collapse'
+    let clz:string = 'collapse navbar-collapse'
     const [toggleBar,setToggleBar] = useState(false)
     if (toggleBar) {
         clz = 'navbar-collapse'

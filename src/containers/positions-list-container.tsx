@@ -4,12 +4,14 @@ import Spinner from "../components/spinner";
 import {fetchPositions} from "../actions";
 
 import PositionList from "../components/position-list";
+import {getLoadingPositions, getPositions} from "../selectors/positions";
+import {AppStateType} from "../reducers";
 
-const PositionListContainer = () => {
+const PositionListContainer: React.FC = () => {
 
     const dispatch = useDispatch()
-    const items = useSelector(state=>state.positionOperations.positionItems)
-    const loadingItems = useSelector(state=>state.positionOperations.loadingPositions)
+    const items = useSelector<AppStateType>(state=>getPositions(state))
+    const loadingItems = useSelector<AppStateType>(state=>getLoadingPositions(state))
     useEffect(() => {
         dispatch(fetchPositions())
     },[dispatch])

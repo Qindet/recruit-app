@@ -1,7 +1,7 @@
-import React from "react";
+import React, {CSSProperties} from "react";
 
 const Spinner = () => {
-    const style = {
+    const style:CSSProperties = {
         textAlign: 'center'
     }
     return (
