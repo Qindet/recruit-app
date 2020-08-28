@@ -10,6 +10,11 @@
     "@types/node": "^14.6.0",
     "@types/react": "^16.9.48",
     "@types/react-dom": "^16.9.8",
+<<<<<<< HEAD
+=======
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+>>>>>>> 611129791e49927e4a2e70c1d735030e43e6f35f
     "axios": "^0.19.2",
     "bootstrap-icons": "^1.0.0-alpha5",
     "formik": "^2.1.5",
